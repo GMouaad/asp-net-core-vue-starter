@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/aspnet:6.0-bullseye-slim AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["./AspNetCoreVueStarter.csproj", "app/"]
 RUN dotnet restore "app/AspNetCoreVueStarter.csproj"
